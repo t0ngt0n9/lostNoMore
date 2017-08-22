@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lostnomore</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <meta name="viewport" content="width=device-width" />
+  </head>
+  <body>
+    <main>
+      <!-- Logo & title -->
+      <div id="logo" class="floatleft"></div>
+      <h1 class="floatleft">Lostnomore</h1>
+      <br class="clearboth">
+
+      <!-- affichage résultat -->
+        <div id="map" class="mapclass"></div>
+          <ul>
+            <ol>
+              <li>Prendre Avenue de Caen et continuer sur 250 m</li>
+              <li>Au rond-point Rond-point des Harkis, prendre à gauche E402/E46 (Place Henri Gadeau de Kerville) et continuer sur 850 m</li>
+              <li>Passer par Le Petit-Quevilly et continuer sur 8,3 km</li>
+            </ol>
+          </ul>
+      <!-- form -->
+      <form action="#">
+
+        <!-- Adresse départ/arrivé -->
+        <fieldset class="floatleft">
+         <legend>Adresses</legend>
+           <p>Départ</p>
+           <input type="text" name="adrd" size="30">
+           <p>Arrivé</p>
+           <input type="text" name="adra" size="30">
+        </fieldset>
+
+        <!-- Les critères -->
+        <fieldset>
+         <legend>Vos critères</legend>
+            <p>Géolocaliser</p>
+             <input type="radio" name="CSS" value="oui" id="oui"
+             checked="checked" />
+             <label for="oui" class="inline">oui</label>
+             <input type="radio" name="CSS" value="non" id="non" />
+             <label for="non" class="inline">non</label>
+            <hr>
+             <label for="labselect">Selectionner un choix : </label>
+             <select name="select1" id="select1">
+             <option value="op1"> Choix 1</option>
+             <option value="op2"> Choix 2</option>
+             <option value="op3"> Choix 3</option>
+             </select>
+            <hr>
+            <input id="checkvelo" type="checkbox">
+            <label for="checkvelo">Vélo</label>
+            <input id="checkvoiture" type="checkbox">
+            <label for="checkvoiture">Voiture</label>
+            <input id="checkferoviaire" type="checkbox">
+            <label for="checkferroviaire">Ferroviaire</label>
+            <input id="checkbus" type="checkbox">
+            <label for="checkbus">Bus</label>
+        </fieldset>
+        <br class="clearboth">
+        <center><input type="submit" value="Valider" class="btnvalider"></center>
+      </form>
+    </main>
+
+    <!-- footer -->
+    <footer>
+      <p>&copy; Lostnomore AJC ScriptingTeam 2017</p>
+    </footer>
+  </body>
+</html>

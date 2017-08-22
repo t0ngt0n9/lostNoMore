@@ -1,3 +1,7 @@
+html {
+  height:100%;
+}
+
 @media all and (min-device-width: 730px) {
 
 
@@ -8,6 +12,9 @@
     background-color: #ddd;
     font-family:"trebuchet ms",sans-serif;
     color:#445;
+    height:100%;
+    margin-left:0;
+    margin-right:0;
   }
   main {
     margin-left: auto;
@@ -21,15 +28,20 @@
   footer {
     margin-top:25px;
     background-color: #334;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
     color: white;
     text-align: center;
-    position: absolute; bottom: 0; left: 0; right: 0
+    position: relative; bottom: 0; left: 0; right: 0;
+    width: 100%;
+    padding:5px;
   }
   form {
   width:100%;
   font-size: 20px;
+  }
+  input {
+    border: 1px solid #557;
   }
   fieldset {
   padding:0 20px 20px 20px;
@@ -53,12 +65,21 @@
     width: 143px;
     margin: 15px;
   }
+  .mapclass {
+    width:100%;
+    height:169px;
+    background-image: url('carte.png'); /* pour la demo */
 }
 
+}
 @media (max-width:739px) {
   body {
     font-family:"trebuchet ms",sans-serif;
     color:#445;
+    height:100%;
+    margin-left:0;
+    margin-right:0;
+    margin-top: 0;
   }
   form {
   width:100%;
@@ -76,6 +97,9 @@
   .clearboth {
     clear: both;
   }
+  input {
+    border: 1px solid #557;
+  }
   fieldset {
   padding:0 20px 20px 20px;
   margin-bottom:10px;
@@ -85,17 +109,23 @@
   footer {
     margin-top:25px;
     background-color: #334;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
     color: white;
     text-align: center;
-    position: absolute; bottom: 0; left: 0; right: 0;
-    display: none;
+    position: relative; bottom: 0; left: 0; right: 0;
+    width: 100%;
+    padding:5px;
   }
   .btnvalider {
     font-size: 24px;
     margin-bottom: 15px;
   }
+  .mapclass {
+    width:100%;
+    height:169px;
+    background-image: url('carte.png'); /* pour la demo */
+}
 }
 
 }
@@ -104,10 +134,17 @@
   body {
     font-family:"trebuchet ms",sans-serif;
     color:#445;
+    height:100%;
+    margin-left:0;
+    margin-right:0;
+    margin-top: 0;
   }
   form {
   width:100%;
   font-size: 20px;
+  }
+  input {
+    border: 1px solid #557;
   }
   h1 {
     float: left;
@@ -130,15 +167,21 @@
   footer {
     margin-top:25px;
     background-color: #334;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
     color: white;
     text-align: center;
-    position: absolute; bottom: 0; left: 0; right: 0;
-    display: none;
+    position: relative; bottom: 0; left: 0; right: 0;
+    width: 100%;
+    padding:5px;
   }
   .btnvalider {
     font-size: 24px;
     margin-bottom: 15px;
   }
+  .mapclass {
+    width:100%;
+    height:169px;
+    background-image: url('carte.png'); /* pour la demo */
+}
 }
