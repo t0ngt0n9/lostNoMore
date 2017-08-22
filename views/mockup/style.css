@@ -1,0 +1,144 @@
+@media all and (min-device-width: 730px) {
+
+
+
+@media (min-width:740px) {
+
+  body {
+    background-color: #ddd;
+    font-family:"trebuchet ms",sans-serif;
+    color:#445;
+  }
+  main {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: white;
+    width: 730px;
+    border: solid 2px #445;
+    border-radius: 10px;
+  }
+  footer {
+    margin-top:25px;
+    background-color: #334;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    text-align: center;
+    position: absolute; bottom: 0; left: 0; right: 0
+  }
+  form {
+  width:100%;
+  font-size: 20px;
+  }
+  fieldset {
+  padding:0 20px 20px 20px;
+  margin-bottom:10px;
+  border-color:#557;
+  margin-right:10px;
+  }
+  .clearboth {
+    clear: both;
+  }
+  .btnvalider {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  .floatleft {
+    float:left;
+  }
+  #logo {
+    background-image: url('logovoit.jpg');
+    height: 100px;
+    width: 143px;
+    margin: 15px;
+  }
+}
+
+@media (max-width:739px) {
+  body {
+    font-family:"trebuchet ms",sans-serif;
+    color:#445;
+  }
+  form {
+  width:100%;
+  font-size: 20px;
+  }
+  h1 {
+    float: left;
+  }
+  #logo {
+    background-image: url('logovoit.jpg');
+    height: 100px;
+    width: 143px;
+    float: right;
+  }
+  .clearboth {
+    clear: both;
+  }
+  fieldset {
+  padding:0 20px 20px 20px;
+  margin-bottom:10px;
+  border-color:#557;
+  margin-right:10px;
+  }
+  footer {
+    margin-top:25px;
+    background-color: #334;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    text-align: center;
+    position: absolute; bottom: 0; left: 0; right: 0;
+    display: none;
+  }
+  .btnvalider {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+}
+
+}
+
+@media all and (max-device-width: 729px) {
+  body {
+    font-family:"trebuchet ms",sans-serif;
+    color:#445;
+  }
+  form {
+  width:100%;
+  font-size: 20px;
+  }
+  h1 {
+    float: left;
+  }
+  #logo {
+    background-image: url('logovoit.jpg');
+    height: 100px;
+    width: 143px;
+    float: right;
+  }
+  .clearboth {
+    clear: both;
+  }
+  fieldset {
+  padding:0 20px 20px 20px;
+  margin-bottom:10px;
+  border-color:#557;
+  margin-right:10px;
+  }
+  footer {
+    margin-top:25px;
+    background-color: #334;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    text-align: center;
+    position: absolute; bottom: 0; left: 0; right: 0;
+    display: none;
+  }
+  .btnvalider {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+}
