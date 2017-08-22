@@ -3,10 +3,9 @@ var router = express.Router();
 var https = require('https');
 
 router.get('/', function(req, res, next) {
-  //res.render('itineraire',{depart : req.param("depart"), Arrivee : req.param("arrivee")});
   var Depart = req.param("depart");
   var Arrivee = req.param("arrivee"); 
-  //var json = null;
+  var json = '';
   var clef; 
   if (Depart && Arrivee){
       clef = 'https://maps.googleapis.com/maps/api/directions/json?origin='+
@@ -16,13 +15,13 @@ router.get('/', function(req, res, next) {
              '&key=AIzaSyCCQF0GSVvpSYo5A1p_7EHx-w-WsmhNMSs';
              
       https.get(clef, (_res) => {
-        //console.log('statusCode:', _res.statusCode);
-        //console.log('headers:', _res.headers);
-         
+
         _res.on('data', (d) => {
-          process.stdout.write(d);
-          //json = process.JSON.parse(d);
-          res.end(d);
+          json = json+d;
+        });
+        _res.on('end', () =>{
+          //json = JSON.parse(json);
+          res.end(json);
         });
 
       }).on('error', (e) => {
