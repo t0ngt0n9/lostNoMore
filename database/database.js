@@ -19,23 +19,26 @@ let History = require('./models/history.js')(Sequelize, database);
 // Set associations
 History.belongsTo(User);
 
-// Testing
-User.sync({force: true}).then(() => {
-    return User.create({
-        firstName: 'John',
-        lastName: 'Hancock',
-        email: 'john.hancock@gmail.com',
-        password: 'jh'
+// Create tables
+User
+    .sync({force: true})
+    .then(() => {
+        console.log("User database created !");
+    })
+    .catch((error) => {
+        console.error("Failed to create User database !");
     });
-});
 
-History.sync({force: true}).then(() => {
-    return History.create({
-        start: "Coucou",
-        end: "Voila",
-        journey: "Coucou",
-        userId: 1
+History
+    .sync({force: true})
+    .then(() => {
+        console.log("History database created !");
+    })
+    .catch((error) => {
+        console.error("Failed to create User database !");
     });
-});
 
-module.exports = database;
+module.exports = {
+    user: User,
+    history: History
+};
