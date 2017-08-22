@@ -1,5 +1,3 @@
-const Sequelize = require('sequelize');
-
 module.exports = (Sequelize, database) => {
     const History = database.define('history',
         {
