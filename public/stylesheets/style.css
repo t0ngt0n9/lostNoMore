@@ -60,7 +60,7 @@ html {
     float:left;
   }
   #logo {
-    background-image: url('logovoit.jpg');
+    background-image: url('../images/logovoit.jpg');
     height: 100px;
     width: 143px;
     margin: 15px;
