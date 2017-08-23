@@ -65,10 +65,9 @@ html {
     width: 143px;
     margin: 15px;
   }
-  .mapclass {
+  #map {
     width:100%;
-    height:169px;
-    background-image: url('carte.png'); /* pour la demo */
+    height:200px;
 }
 
 }
@@ -89,7 +88,7 @@ html {
     float: left;
   }
   #logo {
-    background-image: url('logovoit.jpg');
+    background-image: url('../images/logovoit.jpg');
     height: 100px;
     width: 143px;
     float: right;
@@ -121,10 +120,9 @@ html {
     font-size: 24px;
     margin-bottom: 15px;
   }
-  .mapclass {
+  #map {
     width:100%;
-    height:169px;
-    background-image: url('carte.png'); /* pour la demo */
+    height:200px;
 }
 }
 
@@ -150,7 +148,7 @@ html {
     float: left;
   }
   #logo {
-    background-image: url('logovoit.jpg');
+    background-image: url('../images/logovoit.jpg');
     height: 100px;
     width: 143px;
     float: right;
@@ -179,9 +177,8 @@ html {
     font-size: 24px;
     margin-bottom: 15px;
   }
-  .mapclass {
+  #map {
     width:100%;
-    height:169px;
-    background-image: url('carte.png'); /* pour la demo */
+    height:200px;
 }
 }
