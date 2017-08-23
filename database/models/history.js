@@ -10,7 +10,7 @@ module.exports = (Sequelize, database) => {
                 allowNull: false
             },
             journey: {
-                type: Sequelize.STRING,
+                type: Sequelize.TEXT('long'),
                 allowNull: false
             }
         },
