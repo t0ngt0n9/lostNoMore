@@ -70,7 +70,9 @@ html {
     height:169px;
     background-image: url('carte.png'); /* pour la demo */
 }
-
+  #mapframe {
+    width:730px;
+  }
 }
 @media (max-width:739px) {
   body {
@@ -126,6 +128,9 @@ html {
     height:169px;
     background-image: url('carte.png'); /* pour la demo */
 }
+  #mapframe {
+    width:400px;
+  }
 }
 
 }
@@ -184,4 +189,7 @@ html {
     height:169px;
     background-image: url('carte.png'); /* pour la demo */
 }
+    #mapframe {
+    width:400px;
+  }
 }
