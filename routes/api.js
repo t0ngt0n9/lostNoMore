@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var https = require('https');
+var db = require('../database/database');
 
 router.get('/:depart/:arrivee', (req, res, error) => {
     var Depart = req.params.depart;
@@ -21,6 +22,12 @@ router.get('/:depart/:arrivee', (req, res, error) => {
             });
 
             _res.on('end', () =>{
+                db.history.create({
+                    start: Depart,
+                    end: Arrivee,
+                    journey: json
+                });
+
                 json = JSON.parse(json);
                 res.json(json);
             });
