@@ -36,7 +36,8 @@ form.addEventListener("submit", (e) => {
     ajax(
         "GET",
         `http://localhost:3000/api/${datas.start}/${datas.end}`,
-        (reponse) => {
+        (response) => {
+            console.log(response);
             console.log("Request send to server");
         },
         null,
