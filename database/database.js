@@ -21,7 +21,7 @@ History.belongsTo(User);
 
 // Create tables
 User
-    .sync({force: true})
+    .sync()
     .then(() => {
         console.log("User database created !");
     })
@@ -30,7 +30,7 @@ User
     });
 
 History
-    .sync({force: true})
+    .sync()
     .then(() => {
         console.log("History database created !");
     })
