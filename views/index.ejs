@@ -14,6 +14,7 @@
     <br class="clearboth">
 
     <div id="map"></div>
+    <div id="directions-panel"></div>
     <!-- form -->
     <form>
 
@@ -21,9 +22,9 @@
         <fieldset class="floatleft">
             <legend>Adresses</legend>
             <p>Départ</p>
-            <input type="text" name="adrd" size="30">
+            <input type="text" name="adrd" size="30" id="start">
             <p>Arrivée</p>
-            <input type="text" name="adra" size="30">
+            <input type="text" name="adra" size="30" id="end">
         </fieldset>
 
         <!-- Les critères -->
@@ -53,7 +54,7 @@
             <label for="checkbus">Bus</label>
         </fieldset>
         <br class="clearboth">
-        <center><input type="submit" value="Valider" class="btnvalider"></center>
+        <center><input id="fromsubmit" type="submit" value="Valider" class="btnvalider"></center>
     </form>
 </main>
 
@@ -62,9 +63,13 @@
     <p>&copy; Lostnomore AJC ScriptingTeam 2017</p>
 </footer>
 <script src="javascripts/ajax.js"></script>
-<script src="javascripts/geolocal.js"></script>
+<!-- <script src="javascripts/geolocal.js"></script>
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?callback=initMap">
-    </script>
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBK1oxyga5a0W0KhdEHU9AFzwrWm--Loh4&callback=initMap">
+  </script> -->
+  <script src="javascripts/userroute.js"></script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBK1oxyga5a0W0KhdEHU9AFzwrWm--Loh4&callback=initMap">
+  </script>
 </body>
 </html>
