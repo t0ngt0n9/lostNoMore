@@ -15,6 +15,7 @@
 
     <div id="map"></div>
     <div id="directions-panel"></div>
+    <div id="latlng"></div> <!-- Pour voir les coor gps à cacher ou pas via css -->
     <!-- form -->
     <form>
 
@@ -31,10 +32,10 @@
         <fieldset>
             <legend>Vos critères</legend>
             <p>Géolocaliser</p>
-            <input type="radio" name="CSS" value="oui" id="oui"
-                   checked="checked" />
+            <input type="radio" name="CSS" value="oui" id="oui" />
             <label for="oui" class="inline">oui</label>
-            <input type="radio" name="CSS" value="non" id="non" />
+            <input type="radio" name="CSS" value="non" id="non"
+                   checked="checked" />
             <label for="non" class="inline">non</label>
             <hr>
             <label for="select1">Selectionner un choix : </label>
@@ -63,10 +64,7 @@
     <p>&copy; Lostnomore AJC ScriptingTeam 2017</p>
 </footer>
 <script src="javascripts/ajax.js"></script>
-<!-- <script src="javascripts/geolocal.js"></script>
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBK1oxyga5a0W0KhdEHU9AFzwrWm--Loh4&callback=initMap">
-  </script> -->
+<script src="javascripts/geolocal.js"></script>
   <script src="javascripts/userroute.js"></script>
   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBK1oxyga5a0W0KhdEHU9AFzwrWm--Loh4&callback=initMap">
