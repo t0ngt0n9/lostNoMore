@@ -84,23 +84,9 @@ form.addEventListener("submit", (e) => {
         },
         null,
         false,
-
-  
-
-        //  var marker = new google.maps.Marker({
-        //   position: event.latLng,
-        //   title: '#' + path.getLength(),
-        //   map: map
-        // });
-
-      
-        // Add a new marker at the new plotted point on the polyline.
-        
-      
     );
 });
 
-<<<<<<< HEAD
 function displayDatas(json) {
     let route = json[0].legs[0];
     let arrSteps = route.steps;
@@ -115,5 +101,3 @@ function displayDatas(json) {
         div.appendChild(p);
     });
 }
-=======
->>>>>>> 415d8b746a98eec2423b983cabc2f95c52ee6ed5
