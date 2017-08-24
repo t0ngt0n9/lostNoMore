@@ -1,6 +1,9 @@
 html {
   height:100%;
 }
+#latlng {
+  display: none;
+}
 
 @media all and (min-device-width: 730px) {
 
