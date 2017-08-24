@@ -38,8 +38,32 @@ form.addEventListener("submit", (e) => {
         `http://localhost:3000/api/${datas.start}/${datas.end}`,
         (response) => {
             let json = JSON.parse(response);
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 48.8534 , lng: 2.3488},
+                zoom: 6
+            });
+            var infoWindow = new google.maps.InfoWindow({map: map});
+            var bounds = new google.maps.LatLngBounds();
+
+            var path = google.maps.geometry.encoding.decodePath(json.routes[0].overview_polyline.points);
+            for (var i = 0; i < path.length; i++) {
+                bounds.extend(path[i]);
+            }
+
+            var polyline = new google.maps.Polyline({
+                path: path,
+                strokeColor: '#FF0000 ',
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: '#FF0000 ',
+                fillOpacity: 0.35,
+                map: map
+            });
+            polyline.setMap(map);
+            map.fitBounds(bounds);
         },
         null,
         false
     );
 });
+
