@@ -2,34 +2,34 @@ var express = require('express');
 var router = express.Router();
 var https = require('https');
 var db = require('../database/database');
+var trajet = require('../lib/trajet');
 
-router.get('/:depart/:arrivee', (req, res, error) => {
-    var Depart = req.params.depart;
-    var Arrivee = req.params.arrivee;
+router.get('/:depart/:arrivee/:mode', (req, res, error) => {
+    var depart = req.params.depart;
+    var arrivee = req.params.arrivee;
     var json = '';
-    var clef;
+    var modes = trajet.getModesTravel(req.params.mode);
+    var arrGoogleUrlApi = trajet.setGoogleApiUrl(depart, arrivee, modes);
 
-    if (Depart && Arrivee) {
-        clef = 'https://maps.googleapis.com/maps/api/directions/json?origin='+
-                Depart+
-                '&destination='+
-                Arrivee+
-                '&key=AIzaSyCCQF0GSVvpSYo5A1p_7EHx-w-WsmhNMSs';
-
-        https.get(clef, (_res) => {
+    if (depart && arrivee) {
+        https.get(arrGoogleUrlApi[0], (_res) => {
             _res.on('data', (d) => {
-              json = json + d;
+                json = json + d;
             });
 
-            _res.on('end', () =>{
+            _res.on('end', () => {
                 db.history.create({
-                    start: Depart,
-                    end: Arrivee,
+                    start: depart,
+                    end: arrivee,
                     journey: json
                 });
 
                 json = JSON.parse(json);
-                res.json(json);
+
+                if (trajet.getTrajet(json) !== null)
+                    res.json(trajet.getTrajet(json));
+                else
+                    res.send("No routes found!");
             });
 
         }).on('error', (e) => {
