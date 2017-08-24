@@ -30,14 +30,24 @@ form.addEventListener("submit", (e) => {
         start:  form.elements.adrd.value,
         end: form.elements.adra.value,
         choice: form.elements.select1.value,
-        velo: form.elements.velo.checked
+        bicycling: form.elements.velo.checked,
+        driving: form.elements.voiture.checked,
+        transit: form.elements.tec.checked,
+        walking: form.elements.marche.checked,
     };
+
+    let travel = `velo=${datas.bicycling}-voiture=${datas.driving}-tdc=${datas.transit}-marche=${datas.walking}`;
+    //console.log(travel);
 
     ajax(
         "GET",
-        `http://localhost:3000/api/${datas.start}/${datas.end}`,
+        `http://localhost:3000/api/${datas.start}/${datas.end}/${travel}`,
         (response) => {
-            let json = JSON.parse(response);
+            response = JSON.parse(response);
+            let div = document.createElement('div');
+            let main = document.querySelector('main');
+            div.textContent = response;
+            main.appendChild(div);
         },
         null,
         false
