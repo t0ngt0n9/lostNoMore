@@ -49,10 +49,10 @@ form.addEventListener("submit", (e) => {
                 center: {lat: 48.8534 , lng: 2.3488},
                 zoom: 6
             });
-            //var infoWindow = new google.maps.InfoWindow({map: map, content : json.routes[0].legs[0].distance.text, position : Paris});
+            //var infoWindow = new google.maps.InfoWindow({map: map, content : json[0].legs[0].distance.text, position : Paris});
             var bounds = new google.maps.LatLngBounds();
 
-            var path = google.maps.geometry.encoding.decodePath(json.routes[0].overview_polyline.points);
+            var path = google.maps.geometry.encoding.decodePath(json[0].overview_polyline.points);
             for (var i = 0; i < path.length; i++) {
                 bounds.extend(path[i]);
             }
@@ -70,15 +70,15 @@ form.addEventListener("submit", (e) => {
             map.fitBounds(bounds);
 
             new google.maps.Marker({
-                position: {lat: json.routes[0].legs[0].end_location.lat, lng: json.routes[0].legs[0].end_location.lng},
+                position: {lat: json[0].legs[0].end_location.lat, lng: json[0].legs[0].end_location.lng},
                 map: map,
-                title: json.routes[0].legs[0].end_address
+                title: json[0].legs[0].end_address
             })
-            var infoWindow = new google.maps.InfoWindow({map: map, content : json.routes[0].legs[0].distance.text + ", " + json.routes[0].legs[0].duration.text, position : {lat: json.routes[0].legs[0].end_location.lat, lng: json.routes[0].legs[0].end_location.lng}});
+            var infoWindow = new google.maps.InfoWindow({map: map, content : json[0].legs[0].distance.text + ", " + json[0].legs[0].duration.text, position : {lat: json[0].legs[0].end_location.lat, lng: json[0].legs[0].end_location.lng}});
             new google.maps.Marker({
-                position: {lat: json.routes[0].legs[0].start_location.lat, lng: json.routes[0].legs[0].start_location.lng},
+                position: {lat: json[0].legs[0].start_location.lat, lng: json[0].legs[0].start_location.lng},
                 map: map,
-                title: json.routes[0].legs[0].start_address
+                title: json[0].legs[0].start_address
 
             })
         },
