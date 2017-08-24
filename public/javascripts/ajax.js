@@ -36,20 +36,31 @@ form.addEventListener("submit", (e) => {
         walking: form.elements.marche.checked,
     };
 
-    let travel = `velo=${datas.bicycling}-voiture=${datas.driving}-tdc=${datas.transit}-marche=${datas.walking}`;
-    //console.log(travel);
-
+    let travel = `bicycling=${datas.bicycling}-driving=${datas.driving}-transit=${datas.transit}-walking=${datas.walking}`;
+    console.log(travel);
     ajax(
         "GET",
         `http://localhost:3000/api/${datas.start}/${datas.end}/${travel}`,
         (response) => {
-            response = JSON.parse(response);
-            let div = document.createElement('div');
-            let main = document.querySelector('main');
-            div.textContent = response;
-            main.appendChild(div);
+            let json = JSON.parse(response);
+            displayDatas(json);
         },
         null,
         false
     );
 });
+
+function displayDatas(json) {
+    let route = json[0].legs[0];
+    let arrSteps = route.steps;
+    let div = document.querySelector("#trajet");
+    let title = document.querySelector("#trajet h2:first-child");
+
+    title.textContent = `${route.start_address} - ${route.end_address} / ${route.distance.text} - ${route.duration.text}`;
+
+    arrSteps.forEach((step) => {
+        let p = document.createElement('p');
+        p.innerHTML = `${step.distance.text} - ${step.duration.text} - ${step.html_instructions}`;
+        div.appendChild(p);
+    });
+}
