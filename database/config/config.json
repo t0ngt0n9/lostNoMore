@@ -1,7 +1,7 @@
 {
-  "database": "lostNoMore",
+  "database": "lostnomore",
   "username": "root",
-  "password": "root",
+  "password": "",
   "host": "localhost",
   "dialect": "mysql",
   "pool": {
