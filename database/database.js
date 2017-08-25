@@ -15,6 +15,7 @@ database
 // Init models
 let User = require('./models/user.js')(Sequelize, database);
 let History = require('./models/history.js')(Sequelize, database);
+let Ville = require('./models/ville.js')(Sequelize, database);
 
 // Set associations
 History.belongsTo(User);
@@ -35,10 +36,20 @@ History
         console.log("History database created !");
     })
     .catch((error) => {
-        console.error("Failed to create User database !");
+        console.error("Failed to create History database !");
+    });
+
+Ville
+    .sync()
+    .then(() => {
+        console.log("Ville database created !");
+    })
+    .catch((error) => {
+        console.error("Failed to create Ville database !");
     });
 
 module.exports = {
     user: User,
-    history: History
+    history: History,
+    ville:Ville
 };
