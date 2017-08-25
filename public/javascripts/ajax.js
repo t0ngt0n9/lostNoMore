@@ -103,16 +103,21 @@ function ajax(method, url, callback, data, isJson) {
     req.send(data);
 }
 
-let inputChecked = document.getElementById('checkvoiture');
-inputChecked.addEventListener('change', (e) => {
-    if (e.target.checked) {
-        document.getElementById('checkferroviaire').disabled = true;
-        document.getElementById('checkvelo').disabled = true;
-        document.getElementById('checkmarche').disabled = true;
-    } else {
-        document.getElementById('checkferroviaire').disabled = false;
-        document.getElementById('checkvelo').disabled = false;
-        document.getElementById('checkmarche').disabled = false;
+let inputChecked = document.getElementById('boxcrit');
+inputChecked.addEventListener('click', (e) => {
+
+  changeme = 0;
+  if (document.getElementById(e.target.id).checked == true) {
+    changeme = 1;
+  }
+
+    document.getElementById('checkferroviaire').checked = false;
+    document.getElementById('checkvelo').checked = false;
+    document.getElementById('checkmarche').checked = false;
+    document.getElementById('checkvoiture').checked = false;
+
+    if (changeme == 1) {
+      document.getElementById(e.target.id).checked = true;
     }
 });
 
