@@ -1,8 +1,9 @@
-function displayDatas(route) {
+function displayDatas(route, i) {
     let div = document.querySelector("#trajet");
 
     let legs = route.legs[0];
     let ol = document.createElement("ol");
+    ol.id = "traj" + i;
     ol.textContent = `${legs.start_address} - ${legs.end_address} / ${legs.distance.text} - ${legs.duration.text}`;
     div.appendChild(ol);
 
@@ -11,6 +12,23 @@ function displayDatas(route) {
         let li = document.createElement("li");
         li.innerHTML = `${step.distance.text} - ${step.duration.text} - ${step.html_instructions}`;
         ol.appendChild(li);
+    });
+
+    ol.setAttribute('ok', 'false');
+    ol.addEventListener('click', (e) => {
+      if (ol.ok) {
+        //ol.style ="open:false;";
+        for(i=0; i < e.target.childNodes.length;i++) {
+          e.target.childNodes[i].style = "display:none;";
+        }
+        ol.ok = false;
+      } else {
+        //ol.style ="open:true;";
+        for(i=0; i < e.target.childNodes.length;i++) {
+          e.target.childNodes[i].style = "display:list-item;";
+        }
+        ol.ok = true;
+      }
     });
 }
 
@@ -94,6 +112,8 @@ function ajax(method, url, callback, data, isJson) {
     req.send(data);
 }
 
+
+
 let inputChecked = document.getElementById('boxcrit');
 inputChecked.addEventListener('click', (e) => {
 
@@ -148,7 +168,7 @@ form.addEventListener("submit", (e) => {
             );
 
             json.forEach((route) => {
-                displayDatas(route);
+                displayDatas(route, i);
                 drawRoute(route,map,color[i]);
                 i++;
             });
