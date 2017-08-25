@@ -14,18 +14,9 @@ function displayDatas(route) {
     });
 }
 
-function drawRoute(route) {
+function drawRoute(route,map,color) {
     var legs = route.legs[0];
     var bounds = new google.maps.LatLngBounds();
-    var map = new google.maps.Map(document.getElementById('map'),
-        {
-            center: {
-                lat: 48.8534,
-                lng: 2.3488
-            },
-            zoom: 6
-        }
-    );
 
     new google.maps.Marker({
         position: {
@@ -66,10 +57,10 @@ function drawRoute(route) {
     var polyline = new google.maps.Polyline(
         {
             path: path,
-            strokeColor: 'red',
+            strokeColor: color,
             strokeOpacity: 0.8,
             strokeWeight: 2,
-            fillColor: 'red',
+            fillColor: color,
             fillOpacity: 0.35,
             map: map
         }
@@ -142,12 +133,24 @@ form.addEventListener("submit", (e) => {
         `http://localhost:3000/api/${datas.start}/${datas.end}/${travel}`,
         (response) => {
             let json = JSON.parse(response);
+            let color = ['red','blue','green','yellow','purple'];
+            let i = 0;
 
             document.querySelector("#trajet").innerHTML = "";
+            var map = new google.maps.Map(document.getElementById('map'),
+                {
+                    center: {
+                        lat: 48.8534,
+                        lng: 2.3488
+                    },
+                    zoom: 6
+                }
+            );
 
             json.forEach((route) => {
                 displayDatas(route);
-                drawRoute(route);
+                drawRoute(route,map,color[i]);
+                i++;
             });
         },
         null,
