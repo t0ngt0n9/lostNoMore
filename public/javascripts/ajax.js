@@ -2,15 +2,15 @@ function displayDatas(route) {
     let div = document.querySelector("#trajet");
 
     let legs = route.legs[0];
-    let title = document.createElement("h2");
-    title.textContent = `${legs.start_address} - ${legs.end_address} / ${legs.distance.text} - ${legs.duration.text}`;
-    div.appendChild(title);
+    let ol = document.createElement("ol");
+    ol.textContent = `${legs.start_address} - ${legs.end_address} / ${legs.distance.text} - ${legs.duration.text}`;
+    div.appendChild(ol);
 
     let steps = legs.steps;
     steps.forEach((step) => {
-        let p = document.createElement("p");
-        p.innerHTML = `${step.distance.text} - ${step.duration.text} - ${step.html_instructions}`;
-        div.appendChild(p);
+        let li = document.createElement("li");
+        li.innerHTML = `${step.distance.text} - ${step.duration.text} - ${step.html_instructions}`;
+        ol.appendChild(li);
     });
 }
 
@@ -102,6 +102,19 @@ function ajax(method, url, callback, data, isJson) {
 
     req.send(data);
 }
+
+let inputChecked = document.getElementById('checkvoiture');
+inputChecked.addEventListener('change', (e) => {
+    if (e.target.checked) {
+        document.getElementById('checkferroviaire').disabled = true;
+        document.getElementById('checkvelo').disabled = true;
+        document.getElementById('checkmarche').disabled = true;
+    } else {
+        document.getElementById('checkferroviaire').disabled = false;
+        document.getElementById('checkvelo').disabled = false;
+        document.getElementById('checkmarche').disabled = false;
+    }
+});
 
 let form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
