@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Lostnomore</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+<main>
+    <!-- Logo & title -->
+    <div id="logo" class="floatleft"></div>
+    <h1 class="floatleft">Lostnomore</h1>
+    <br class="clearboth">
+
+    <div id="map"></div>
+    <div id="directions-panel"></div>
+    <div id="latlng"></div> <!-- Pour voir les coor gps à cacher ou pas via css -->
+    <div id="trajet"></div>
+    <!-- form -->
+    <form>
+
+        <!-- Adresse départ/arrivé -->
+        <fieldset class="floatleft">
+            <legend>Adresses</legend>
+            <p>Départ</p>
+            <input type="text" name="adrd" size="30" id="start">
+            <p>Arrivée</p>
+            <input type="text" name="adra" size="30" id="end">
+        </fieldset>
+
+        <!-- Les critères -->
+        <fieldset>
+            <legend>Vos critères</legend>
+            <p>Géolocaliser</p>
+            <input type="radio" name="CSS" value="oui" id="oui" />
+            <label for="oui" class="inline">oui</label>
+            <input type="radio" name="CSS" value="non" id="non"
+                   checked="checked" />
+            <label for="non" class="inline">non</label>
+            <hr>
+            <label for="select1">Selectionner un choix : </label>
+            <select name="select1" id="select1">
+                <option value="op1"> Choix 1</option>
+                <option value="op2"> Choix 2</option>
+                <option value="op3"> Choix 3</option>
+            </select>
+            <hr>
+          <div id="boxcrit">
+            <input id="checkvelo" name="velo" type="checkbox">
+            <label for="checkvelo">Vélo</label>
+            <input id="checkvoiture" name="voiture" type="checkbox">
+            <label for="checkvoiture">Voiture</label>
+            <input id="checkferroviaire" name="tec" type="checkbox">
+            <label for="checkferroviaire">Ferroviaire</label>
+            <input id="checkmarche" name="marche" type="checkbox">
+            <label for="checkmarche">Marche</label>
+          </div>
+        </fieldset>
+        <br class="clearboth">
+        <center><input id="fromsubmit" type="submit" value="Valider" class="btnvalider"></center>
+    </form>
+</main>
+
+<!-- footer -->
+<footer>
+    <p>&copy; Lostnomore AJC ScriptingTeam 2017</p>
+</footer>
+<script src="javascripts/ajax.js"></script>
+<script src="javascripts/geolocal.js"></script>
+<script src="javascripts/userroute.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBK1oxyga5a0W0KhdEHU9AFzwrWm--Loh4&callback=initMap&libraries=geometry&language=fr"></script>
+</body>
+</html>
